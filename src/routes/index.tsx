@@ -221,9 +221,7 @@ function FunctionStep({ onPick }: { onPick: (name: string) => void }) {
             </div>
             <p className="text-sm text-muted-foreground mt-1">{c.description}</p>
             <p className="text-xs text-muted-foreground mt-3">
-              {c.roles.length} positions ·{" "}
-              {formatCHF(Math.min(...c.roles.map((r) => r.min)))} –{" "}
-              {formatCHF(Math.max(...c.roles.map((r) => r.max)))}
+              {c.roles.length} positions
             </p>
           </button>
         ))}
