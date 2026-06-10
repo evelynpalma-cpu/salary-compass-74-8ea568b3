@@ -128,15 +128,15 @@ function Index() {
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <InfoTile
               title="Bonuses"
-              body="Bonuses are common in Switzerland. They typically vary between 10-20% for professionals and 30-60% for C-level roles."
+              body="Variable compensation is common in Switzerland and generally increases with seniority. Professional roles often receive performance bonuses of 5–20% of base salary, while senior leadership and executive roles may participate in larger annual incentive plans. Bonus levels vary significantly by industry, company size, ownership structure and business performance."
             />
             <InfoTile
               title="Long-term incentives (LTI)"
-              body="LTI are common at senior level, usually as stock in listed companies or PE-backed firms. Phantom shares and similar LTI are also common in start-ups, where they can be a meaningful part of the package at early stages."
+              body="Long-term incentives are typically reserved for senior leadership and executive positions. Listed companies often provide share-based plans, private equity-backed businesses may offer management participation programs, and start-ups frequently use ESOP or phantom share structures. LTIs are less common in traditional Swiss SMEs."
             />
             <InfoTile
-              title="Benefits"
-              body="Other benefits available in Switzerland include pension fund contributions, mobility (e.g. GA travelcard), lunch subsidies, company car, and further education."
+              title="Retirement & Insurance"
+              body="Swiss employers frequently differentiate themselves through enhanced pension fund contributions (BVG), executive pension plans, healthcare insuranc coverage. For senior professionals, these benefits can represent a significant part of total compensation"
             />
           </div>
         </section>
