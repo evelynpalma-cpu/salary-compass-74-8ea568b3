@@ -94,10 +94,11 @@ export const bonusRanges: Record<Role["level"], { min: number; max: number; labe
 };
 
 export function formatCHF(n: number): string {
-  // Manual thousands separator with apostrophe (Swiss convention) — locale-independent
-  // to avoid SSR/client hydration mismatches.
+  // Manual thousands separator (Swiss convention), locale-independent to avoid
+  // SSR/client hydration mismatches. Uses U+2019 to match what some browser
+  // extensions auto-convert ASCII apostrophes to on the client.
   const s = Math.round(n).toString();
-  const withSep = s.replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+  const withSep = s.replace(/\B(?=(\d{3})+(?!\d))/g, "\u2019");
   return `CHF ${withSep}`;
 }
 
