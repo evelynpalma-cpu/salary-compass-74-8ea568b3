@@ -453,14 +453,24 @@ function Stat({ label, value, sub }: { label: string; value: string; sub: string
   );
 }
 
-function InfoTile({ title, body }: { title: string; body: string }) {
+function InfoTile({ title, body, tooltip }: { title: string; body: string; tooltip?: string }) {
   return (
-    <div className="rounded-xl border border-border bg-card p-5">
+    <div className="h-full flex flex-col rounded-xl border border-border bg-card p-5">
       <div className="flex items-center gap-2">
         <span className="h-1.5 w-1.5 rounded-full bg-primary" />
         <h3 className="text-base">{title}</h3>
+        {tooltip && (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Info className="h-3.5 w-3.5 text-muted-foreground cursor-help ml-0.5" />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{tooltip}</p>
+            </TooltipContent>
+          </Tooltip>
+        )}
       </div>
-      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{body}</p>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{body}</p>
     </div>
   );
 }
