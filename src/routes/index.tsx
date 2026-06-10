@@ -271,15 +271,9 @@ function SeniorityStep({
                   <div className="font-display text-xl mt-1">{r.title}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Base salary
-                  </div>
-                  <div className="font-display text-lg mt-1">
-                    {formatCHF(r.min)} – {formatCHF(r.max)}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    avg {formatCHF(r.avg)}
-                  </div>
+                  <span className="text-primary text-sm">
+                    See 2026 salary →
+                  </span>
                 </div>
               </div>
             </button>
