@@ -35,7 +35,7 @@ export const categories: Category[] = [
   },
   {
     name: "FP&A",
-    description: "Forecasting, budgeting, strategic planning, performance dashboards.",
+    description: "Forecasting, budgeting, strategic planning, performance analysis",
     roles: [
       { title: "FP&A Analyst", min: 95000, avg: 110000, max: 125000, level: "analyst" },
       { title: "Senior FP&A Analyst", min: 115000, avg: 125000, max: 135000, level: "senior" },
