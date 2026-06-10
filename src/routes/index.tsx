@@ -11,7 +11,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Finance Salary Benchmark Switzerland 2026 — Blackbird" },
+      { title: "Finance Salary Benchmark Switzerland 2026 · Blackbird" },
       {
         name: "description",
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Finance Salary Benchmark Switzerland 2026" },
       {
         property: "og:description",
-        content: "Pick a function, then a seniority — get the 2026 Swiss finance salary range instantly.",
+        content: "Pick a function, then a seniority, and get the 2026 Swiss finance salary range instantly.",
       },
     ],
     links: [
