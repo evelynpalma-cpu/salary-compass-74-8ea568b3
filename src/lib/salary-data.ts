@@ -94,5 +94,17 @@ export const bonusRanges: Record<Role["level"], { min: number; max: number; labe
 };
 
 export function formatCHF(n: number): string {
-  return `CHF ${n.toLocaleString("de-CH").replace(/,/g, "'")}`;
+  // Manual thousands separator with apostrophe (Swiss convention) — locale-independent
+  // to avoid SSR/client hydration mismatches.
+  const s = Math.round(n).toString();
+  const withSep = s.replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+  return `CHF ${withSep}`;
 }
+
+export const seniorityLevels: { key: Role["level"]; label: string; sub: string }[] = [
+  { key: "analyst", label: "Junior / Analyst", sub: "0–3 years" },
+  { key: "senior", label: "Senior IC", sub: "3–7 years" },
+  { key: "manager", label: "Manager", sub: "5–10 years, team lead" },
+  { key: "head", label: "Head of Function", sub: "10+ years" },
+  { key: "executive", label: "Executive / CFO", sub: "C-level" },
+];
