@@ -11,7 +11,7 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Finance Salary Benchmark Switzerland 2026 — Blackbird" },
+      { title: "Finance Salary Benchmark Switzerland 2026 · Blackbird" },
       {
         name: "description",
         content:
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Finance Salary Benchmark Switzerland 2026" },
       {
         property: "og:description",
-        content: "Pick a function, then a seniority — get the 2026 Swiss finance salary range instantly.",
+        content: "Pick a function, then a seniority, and get the 2026 Swiss finance salary range instantly.",
       },
     ],
     links: [
@@ -84,8 +84,9 @@ function Index() {
             Know what your <span className="text-gradient-gold">finance role</span> is worth in Switzerland.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
-            Pick your function, then your seniority. We'll show the 2026 Swiss market range —
-            base salary, bonus, and total cash — based on Blackbird's placements.
+            Pick your function, then your seniority, and we'll reveal the 2026 Swiss market range:
+            base salary, bonus, and total cash. Figures are based on market research, recent
+            placements, and ongoing market discussions.
           </p>
         </section>
 
@@ -127,23 +128,23 @@ function Index() {
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <InfoTile
               title="Bonuses"
-              body="5–15% for Analysts & Seniors, 15–25% for Managers, 20–40% for Heads of Function, 30–60% for CFOs."
+              body="Bonuses are common in Switzerland. They typically vary between 10-20% for professionals and 30-60% for C-level roles."
             />
             <InfoTile
-              title="Long-term incentives"
-              body="Stock, RSUs or phantom shares — typically from Head of Function upward, especially in listed or PE-backed firms."
+              title="Long-term incentives (LTI)"
+              body="LTI are common at senior level, usually as stock in listed companies or PE-backed firms. Phantom shares and similar LTI are also common in start-ups, where they can be a meaningful part of the package at early stages."
             />
             <InfoTile
               title="Benefits"
-              body="Pension, mobility & lunch subsidies, hybrid work. Executive upgrades: company car, LTI, enhanced pension."
+              body="Other benefits available in Switzerland include pension fund contributions, mobility (e.g. GA travelcard), lunch subsidies, company car, and further education."
             />
           </div>
         </section>
 
         <p className="mt-12 text-xs text-muted-foreground max-w-3xl">
-          Figures reflect annual base salaries in CHF for 2026 and are indicative only. Actual offers may
-          vary by sector, location, and company size — and whether the company is listed, PE-backed, or
-          family/privately owned.
+          Figures reflect annual base salaries in CHF for 2026 and are indicative only. Actual offers
+          may vary by sector, location, and company size, and whether the company is listed,
+          PE-backed, or family/privately owned.
         </p>
       </main>
 
@@ -220,9 +221,7 @@ function FunctionStep({ onPick }: { onPick: (name: string) => void }) {
             </div>
             <p className="text-sm text-muted-foreground mt-1">{c.description}</p>
             <p className="text-xs text-muted-foreground mt-3">
-              {c.roles.length} positions ·{" "}
-              {formatCHF(Math.min(...c.roles.map((r) => r.min)))} –{" "}
-              {formatCHF(Math.max(...c.roles.map((r) => r.max)))}
+              {c.roles.length} positions
             </p>
           </button>
         ))}
@@ -272,15 +271,9 @@ function SeniorityStep({
                   <div className="font-display text-xl mt-1">{r.title}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Base salary
-                  </div>
-                  <div className="font-display text-lg mt-1">
-                    {formatCHF(r.min)} – {formatCHF(r.max)}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    avg {formatCHF(r.avg)}
-                  </div>
+                  <span className="text-primary text-sm">
+                    See 2026 salary →
+                  </span>
                 </div>
               </div>
             </button>
@@ -382,7 +375,7 @@ function ResultStep({
         {(role.level === "head" || role.level === "executive") && (
           <div className="mt-6 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm text-foreground/90">
             <span className="text-primary font-medium">LTI eligible.</span> Stock, RSUs or phantom
-            shares are typically offered at this level — especially in listed or PE-backed firms.
+            shares are typically offered at this level, especially in listed or PE-backed firms.
           </div>
         )}
 
