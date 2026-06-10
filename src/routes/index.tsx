@@ -84,8 +84,9 @@ function Index() {
             Know what your <span className="text-gradient-gold">finance role</span> is worth in Switzerland.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
-            Pick your function, then your seniority. We'll show the 2026 Swiss market range —
-            base salary, bonus, and total cash — based on Blackbird's placements.
+            Pick your function, then your seniority, and we'll reveal the 2026 Swiss market range:
+            base salary, bonus, and total cash. Figures are based on market research, recent
+            placements, and ongoing market discussions.
           </p>
         </section>
 
