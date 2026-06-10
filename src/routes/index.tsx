@@ -132,26 +132,32 @@ function Index() {
 
         <section className="mt-20">
           <h2 className="text-2xl">What's typically included beyond base</h2>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <InfoTile
               title="Bonuses"
+              tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
               body="Variable compensation is common in Switzerland and generally increases with seniority. Professional roles often receive performance bonuses of 5–20% of base salary, while senior leadership and executive roles may participate in larger annual incentive plans. Bonus levels vary significantly by industry, company size, ownership structure and business performance."
             />
             <InfoTile
               title="Long-term incentives (LTI)"
+              tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
               body="Long-term incentives are typically reserved for senior leadership and executive positions. Listed companies often provide share-based plans, private equity-backed businesses may offer management participation programs, and start-ups frequently use ESOP or phantom share structures. LTIs are less common in traditional Swiss SMEs."
             />
             <InfoTile
               title="Retirement & Insurance"
-              body="Swiss employers frequently differentiate themselves through enhanced pension fund contributions (BVG), executive pension plans, healthcare insuranc coverage. For senior professionals, these benefits can represent a significant part of total compensation"
+              tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
+              body="Swiss employers frequently differentiate themselves through enhanced pension fund contributions (BVG), executive pension plans, healthcare insurance coverage. For senior professionals, these benefits can represent a significant part of total compensation."
+            />
+            <InfoTile
+              title="Benefits & Flexibility"
+              tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
+              body="Beyond compensation, employers can differentiate themselves by offering flexible working arrangements, public transport subsidies (GA/Half-fare card), professional development support, additional leave and family-related benefits. Availability varies by employer, industry and seniority."
             />
           </div>
         </section>
 
         <p className="mt-12 text-xs text-muted-foreground max-w-3xl">
-          Figures reflect annual base salaries in CHF for 2026 and are indicative only. Actual offers
-          may vary by sector, location, and company size, and whether the company is listed,
-          PE-backed, or family/privately owned.
+          Compensation structures and benefits vary by company, industry, ownership structure and role level. Information shown is indicative of Swiss market practice and should not be interpreted as a guaranteed compensation package.
         </p>
       </main>
 
