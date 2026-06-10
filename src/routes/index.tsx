@@ -128,23 +128,23 @@ function Index() {
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <InfoTile
               title="Bonuses"
-              body="5–15% for Analysts & Seniors, 15–25% for Managers, 20–40% for Heads of Function, 30–60% for CFOs."
+              body="Bonuses are common in Switzerland. They typically vary between 10-20% for professionals and 30-60% for C-level roles."
             />
             <InfoTile
-              title="Long-term incentives"
-              body="Stock, RSUs or phantom shares — typically from Head of Function upward, especially in listed or PE-backed firms."
+              title="Long-term incentives (LTI)"
+              body="LTI are common at senior level, usually as stock in listed companies or PE-backed firms. Phantom shares and similar LTI are also common in start-ups, where they can be a meaningful part of the package at early stages."
             />
             <InfoTile
               title="Benefits"
-              body="Pension, mobility & lunch subsidies, hybrid work. Executive upgrades: company car, LTI, enhanced pension."
+              body="Other benefits available in Switzerland include pension fund contributions, mobility (e.g. GA travelcard), lunch subsidies, company car, and further education."
             />
           </div>
         </section>
 
         <p className="mt-12 text-xs text-muted-foreground max-w-3xl">
-          Figures reflect annual base salaries in CHF for 2026 and are indicative only. Actual offers may
-          vary by sector, location, and company size — and whether the company is listed, PE-backed, or
-          family/privately owned.
+          Figures reflect annual base salaries in CHF for 2026 and are indicative only. Actual offers
+          may vary by sector, location, and company size, and whether the company is listed,
+          PE-backed, or family/privately owned.
         </p>
       </main>
 
