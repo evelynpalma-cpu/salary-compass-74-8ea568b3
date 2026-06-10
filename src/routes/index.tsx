@@ -375,7 +375,7 @@ function ResultStep({
         {(role.level === "head" || role.level === "executive") && (
           <div className="mt-6 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm text-foreground/90">
             <span className="text-primary font-medium">LTI eligible.</span> Stock, RSUs or phantom
-            shares are typically offered at this level — especially in listed or PE-backed firms.
+            shares are typically offered at this level, especially in listed or PE-backed firms.
           </div>
         )}
 
