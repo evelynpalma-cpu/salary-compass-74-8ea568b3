@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
+import { Info } from "lucide-react";
 import {
   categories,
   bonusRanges,
@@ -7,6 +8,12 @@ import {
   seniorityLevels,
   type Role,
 } from "@/lib/salary-data";
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 
 export const Route = createFileRoute("/")({
   head: () => ({
