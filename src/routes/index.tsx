@@ -328,7 +328,7 @@ function ResultStep({
             onClick={onChangeRole}
             className="px-3 py-1 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-primary/50 transition"
           >
-            ← {sen.label}
+            ← Change role
           </button>
         </div>
 
