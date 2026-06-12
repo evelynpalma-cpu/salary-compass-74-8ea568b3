@@ -5,7 +5,6 @@ import {
   categories,
   bonusRanges,
   formatCHF,
-  seniorityLevels,
   type Role,
 } from "@/lib/salary-data";
 import {
@@ -92,7 +91,7 @@ function Index() {
             Know what your <span className="text-gradient-gold">finance role</span> is worth in Switzerland.
           </h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
-            Pick your function, then your seniority, and we'll reveal the 2026 Swiss market range:
+            Pick your function, then your role, and we'll reveal the 2026 Swiss market range:
             base salary, bonus, and total cash. Figures are based on market research, recent
             placements, and ongoing market discussions.
           </p>
@@ -175,7 +174,7 @@ function Index() {
 function Stepper({ step }: { step: Step }) {
   const items = [
     { n: 1, label: "Function" },
-    { n: 2, label: "Seniority" },
+    { n: 2, label: "Role" },
     { n: 3, label: "Salary" },
   ];
   return (
@@ -264,36 +263,28 @@ function SeniorityStep({
           >
             ← Change function
           </button>
-          <h2 className="text-2xl font-display mt-1">{category.name} · pick a seniority</h2>
+          <h2 className="text-2xl font-display mt-1">{category.name} · pick a role</h2>
           <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
         </div>
       </div>
 
       <div className="mt-6 grid gap-3">
-        {category.roles.map((r) => {
-          const sen = seniorityLevels.find((s) => s.key === r.level)!;
-          return (
-            <button
-              key={r.title}
-              onClick={() => onPick(r.title)}
-              className="group text-left rounded-xl border border-border bg-card p-5 hover:border-primary hover:bg-primary/5 transition"
-            >
-              <div className="flex items-start justify-between gap-4 flex-wrap">
-                <div>
-                  <div className="text-xs uppercase tracking-wider text-primary">
-                    {sen.label} · {sen.sub}
-                  </div>
-                  <div className="font-display text-xl mt-1">{r.title}</div>
-                </div>
-                <div className="text-right">
-                  <span className="text-primary text-sm">
-                    See 2026 salary →
-                  </span>
-                </div>
+        {category.roles.map((r) => (
+          <button
+            key={r.title}
+            onClick={() => onPick(r.title)}
+            className="group text-left rounded-xl border border-border bg-card p-5 hover:border-primary hover:bg-primary/5 transition"
+          >
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div className="font-display text-xl">{r.title}</div>
+              <div className="text-right">
+                <span className="text-primary text-sm">
+                  See 2026 salary →
+                </span>
               </div>
-            </button>
-          );
-        })}
+            </div>
+          </button>
+        ))}
       </div>
     </div>
   );
@@ -317,7 +308,7 @@ function ResultStep({
   const totalMax = role.max + bonusMaxAmt;
   const span = role.max - role.min;
   const avgPct = span > 0 ? ((role.avg - role.min) / span) * 100 : 50;
-  const sen = seniorityLevels.find((s) => s.key === role.level)!;
+  
 
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-10 relative overflow-hidden">
@@ -337,7 +328,7 @@ function ResultStep({
             onClick={onChangeRole}
             className="px-3 py-1 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-primary/50 transition"
           >
-            ← {sen.label}
+            ← Change role
           </button>
         </div>
 
@@ -346,9 +337,6 @@ function ResultStep({
             {category.name} · 2026
           </span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-display">{role.title}</h2>
-          <p className="text-muted-foreground text-sm mt-2 max-w-md">
-            {sen.label} · {sen.sub}
-          </p>
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
