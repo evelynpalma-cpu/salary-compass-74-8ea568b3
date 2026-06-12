@@ -5,7 +5,6 @@ import {
   categories,
   bonusRanges,
   formatCHF,
-  seniorityLevels,
   type Role,
 } from "@/lib/salary-data";
 import {
