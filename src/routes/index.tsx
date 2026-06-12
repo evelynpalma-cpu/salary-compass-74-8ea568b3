@@ -35,8 +35,9 @@ export const Route = createFileRoute("/")({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
       },
+
     ],
   }),
   component: Index,
@@ -178,7 +179,8 @@ function Stepper({ step }: { step: Step }) {
     { n: 3, label: "Salary" },
   ];
   return (
-    <ol className="mt-10 flex items-center gap-3 text-sm">
+    <ol className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+
       {items.map((it, i) => {
         const active = step === it.n;
         const done = step > it.n;
