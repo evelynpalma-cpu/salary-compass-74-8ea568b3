@@ -36,7 +36,6 @@ export const Route = createFileRoute("/")({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
       },
-
     ],
   }),
   component: Index,
@@ -63,16 +62,14 @@ function Index() {
     <div className="min-h-screen bg-grain">
       <header className="border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-md bg-primary grid place-items-center">
-              <span className="text-primary-foreground font-display text-sm font-semibold">B</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img src="/logo.png" alt="Blackbird" className="h-9 w-9 rounded-full object-cover" />
             <span className="font-display text-lg">Blackbird</span>
             <span className="text-muted-foreground text-xs ml-2 hidden sm:inline">
               Talent Solutions · Switzerland
             </span>
           </div>
-          <a
+          
             href="mailto:info@bbird.ch"
             className="text-sm text-muted-foreground hover:text-foreground transition"
           >
@@ -179,7 +176,6 @@ function Stepper({ step }: { step: Step }) {
   ];
   return (
     <ol className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
-
       {items.map((it, i) => {
         const active = step === it.n;
         const done = step > it.n;
@@ -302,13 +298,8 @@ function ResultStep({
   onChangeFunction: () => void;
 }) {
   const bonus = bonusRanges[role.level];
-  const bonusMinAmt = Math.round((role.min * bonus.min) / 100);
-  const bonusMaxAmt = Math.round((role.max * bonus.max) / 100);
-  const totalMin = role.min + bonusMinAmt;
-  const totalMax = role.max + bonusMaxAmt;
   const span = role.max - role.min;
   const avgPct = span > 0 ? ((role.avg - role.min) / span) * 100 : 50;
-  
 
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-10 relative overflow-hidden">
@@ -362,16 +353,10 @@ function ResultStep({
           </div>
         </div>
 
-        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+        <div className="mt-8">
           <Stat
             label="Typical bonus"
             value={`${bonus.min}–${bonus.max}%`}
-            sub={`${formatCHF(bonusMinAmt)} – ${formatCHF(bonusMaxAmt)} per year`}
-          />
-          <Stat
-            label="Estimated total cash"
-            value={`${formatCHF(totalMin)} – ${formatCHF(totalMax)}`}
-            sub="Base + bonus, per year"
           />
         </div>
 
@@ -383,7 +368,7 @@ function ResultStep({
         )}
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <a
+          
             href="mailto:info@bbird.ch?subject=Salary%20benchmark%20-%20talk%20to%20Blackbird"
             className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
           >
@@ -433,12 +418,11 @@ function NumberBlock({
   );
 }
 
-function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
+function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="rounded-lg bg-surface border border-border p-4">
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
       <div className="mt-1 text-lg font-display">{value}</div>
-      <div className="text-xs text-muted-foreground mt-0.5">{sub}</div>
     </div>
   );
 }
