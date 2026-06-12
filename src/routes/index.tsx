@@ -8,6 +8,7 @@ import {
   type Role,
 } from "@/lib/salary-data";
 import {
+  TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
@@ -35,6 +36,7 @@ export const Route = createFileRoute("/")({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap",
       },
+
     ],
   }),
   component: Index,
@@ -61,8 +63,10 @@ function Index() {
     <div className="min-h-screen bg-grain">
       <header className="border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src="/logo-blackbird.png" alt="Blackbird" className="h-9 w-9 rounded-full object-cover" />
+          <div className="flex items-center gap-2">
+            <div className="h-7 w-7 rounded-md bg-primary grid place-items-center">
+              <span className="text-primary-foreground font-display text-sm font-semibold">B</span>
+            </div>
             <span className="font-display text-lg">Blackbird</span>
             <span className="text-muted-foreground text-xs ml-2 hidden sm:inline">
               Talent Solutions · Switzerland
@@ -104,6 +108,7 @@ function Index() {
               }}
             />
           )}
+
           {step === 2 && category && (
             <SeniorityStep
               category={category}
@@ -111,6 +116,7 @@ function Index() {
               onPick={(title) => setRoleTitle(title)}
             />
           )}
+
           {step === 3 && category && role && (
             <ResultStep
               category={category}
@@ -130,7 +136,7 @@ function Index() {
             <InfoTile
               title="Bonuses"
               tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
-              body="Variable compensation is common in Switzerland and generally increases with seniority. Professional roles often receive performance bonuses of 5-20% of base salary, while senior leadership and executive roles may participate in larger annual incentive plans. Bonus levels vary significantly by industry, company size, ownership structure and business performance."
+              body="Variable compensation is common in Switzerland and generally increases with seniority. Professional roles often receive performance bonuses of 5–20% of base salary, while senior leadership and executive roles may participate in larger annual incentive plans. Bonus levels vary significantly by industry, company size, ownership structure and business performance."
             />
             <InfoTile
               title="Long-term incentives (LTI)"
@@ -138,12 +144,12 @@ function Index() {
               body="Long-term incentives are typically reserved for senior leadership and executive positions. Listed companies often provide share-based plans, private equity-backed businesses may offer management participation programs, and start-ups frequently use ESOP or phantom share structures. LTIs are less common in traditional Swiss SMEs."
             />
             <InfoTile
-              title="Retirement and Insurance"
+              title="Retirement & Insurance"
               tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
               body="Swiss employers frequently differentiate themselves through enhanced pension fund contributions (BVG), executive pension plans, healthcare insurance coverage. For senior professionals, these benefits can represent a significant part of total compensation."
             />
             <InfoTile
-              title="Benefits and Flexibility"
+              title="Benefits & Flexibility"
               tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
               body="Beyond compensation, employers can differentiate themselves by offering flexible working arrangements, public transport subsidies (GA/Half-fare card), professional development support, additional leave and family-related benefits. Availability varies by employer, industry and seniority."
             />
@@ -157,7 +163,7 @@ function Index() {
 
       <footer className="border-t border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-6 text-xs text-muted-foreground flex flex-wrap gap-2 justify-between">
-          <span>Blackbird Talent Solutions · SECO-licensed recruitment company</span>
+          <span>© Blackbird Talent Solutions · SECO-licensed recruitment company</span>
           <span>Seestrasse 185a, 8800 Thalwil · www.bbird.ch</span>
         </div>
       </footer>
@@ -173,6 +179,7 @@ function Stepper({ step }: { step: Step }) {
   ];
   return (
     <ol className="mt-10 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+
       {items.map((it, i) => {
         const active = step === it.n;
         const done = step > it.n;
@@ -223,7 +230,7 @@ function FunctionStep({ onPick }: { onPick: (name: string) => void }) {
             <div className="flex items-center justify-between">
               <span className="font-display text-lg">{c.name}</span>
               <span className="text-primary text-sm opacity-0 group-hover:opacity-100 transition">
-                Select
+                Select →
               </span>
             </div>
             <p className="text-sm text-muted-foreground mt-1">{c.description}</p>
@@ -254,12 +261,13 @@ function SeniorityStep({
             onClick={onBack}
             className="text-xs text-muted-foreground hover:text-foreground transition"
           >
-            Change function
+            ← Change function
           </button>
           <h2 className="text-2xl font-display mt-1">{category.name} · pick a role</h2>
           <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
         </div>
       </div>
+
       <div className="mt-6 grid gap-3">
         {category.roles.map((r) => (
           <button
@@ -270,7 +278,9 @@ function SeniorityStep({
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="font-display text-xl">{r.title}</div>
               <div className="text-right">
-                <span className="text-primary text-sm">See 2026 salary</span>
+                <span className="text-primary text-sm">
+                  See 2026 salary →
+                </span>
               </div>
             </div>
           </button>
@@ -292,8 +302,13 @@ function ResultStep({
   onChangeFunction: () => void;
 }) {
   const bonus = bonusRanges[role.level];
+  const bonusMinAmt = Math.round((role.min * bonus.min) / 100);
+  const bonusMaxAmt = Math.round((role.max * bonus.max) / 100);
+  const totalMin = role.min + bonusMinAmt;
+  const totalMax = role.max + bonusMaxAmt;
   const span = role.max - role.min;
   const avgPct = span > 0 ? ((role.avg - role.min) / span) * 100 : 50;
+  
 
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-10 relative overflow-hidden">
@@ -307,13 +322,13 @@ function ResultStep({
             onClick={onChangeFunction}
             className="px-3 py-1 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-primary/50 transition"
           >
-            {category.name}
+            ← {category.name}
           </button>
           <button
             onClick={onChangeRole}
             className="px-3 py-1 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-primary/50 transition"
           >
-            Change role
+            ← Change role
           </button>
         </div>
 
@@ -347,10 +362,16 @@ function ResultStep({
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 grid sm:grid-cols-2 gap-4">
           <Stat
             label="Typical bonus"
-            value={`${bonus.min}-${bonus.max}%`}
+            value={`${bonus.min}–${bonus.max}%`}
+            sub={`${formatCHF(bonusMinAmt)} – ${formatCHF(bonusMaxAmt)} per year`}
+          />
+          <Stat
+            label="Estimated total cash"
+            value={`${formatCHF(totalMin)} – ${formatCHF(totalMax)}`}
+            sub="Base + bonus, per year"
           />
         </div>
 
@@ -362,7 +383,7 @@ function ResultStep({
         )}
 
         <div className="mt-8 flex flex-wrap gap-3">
-           <a
+          <a
             href="mailto:info@bbird.ch?subject=Salary%20benchmark%20-%20talk%20to%20Blackbird"
             className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
           >
@@ -393,7 +414,9 @@ function NumberBlock({
     <div
       className={
         "rounded-xl border p-5 " +
-        (highlight ? "border-primary/40 bg-primary/5" : "border-border bg-surface")
+        (highlight
+          ? "border-primary/40 bg-primary/5"
+          : "border-border bg-surface")
       }
     >
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
@@ -410,11 +433,12 @@ function NumberBlock({
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
+function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
   return (
     <div className="rounded-lg bg-surface border border-border p-4">
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
       <div className="mt-1 text-lg font-display">{value}</div>
+      <div className="text-xs text-muted-foreground mt-0.5">{sub}</div>
     </div>
   );
 }
