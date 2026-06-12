@@ -102,10 +102,3 @@ export function formatCHF(n: number): string {
   return `CHF ${withSep}`;
 }
 
-export const seniorityLevels: { key: Role["level"]; label: string; sub: string }[] = [
-  { key: "analyst", label: "Junior / Analyst", sub: "0–3 years" },
-  { key: "senior", label: "Senior IC", sub: "3–7 years" },
-  { key: "manager", label: "Manager", sub: "5–10 years, team lead" },
-  { key: "head", label: "Head of Function", sub: "10+ years" },
-  { key: "executive", label: "Executive / CFO", sub: "C-level" },
-];
