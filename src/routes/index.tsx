@@ -105,7 +105,6 @@ function Index() {
               }}
             />
           )}
-
           {step === 2 && category && (
             <SeniorityStep
               category={category}
@@ -113,7 +112,6 @@ function Index() {
               onPick={(title) => setRoleTitle(title)}
             />
           )}
-
           {step === 3 && category && role && (
             <ResultStep
               category={category}
@@ -263,7 +261,6 @@ function SeniorityStep({
           <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
         </div>
       </div>
-
       <div className="mt-6 grid gap-3">
         {category.roles.map((r) => (
           <button
@@ -274,9 +271,7 @@ function SeniorityStep({
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="font-display text-xl">{r.title}</div>
               <div className="text-right">
-                <span className="text-primary text-sm">
-                  See 2026 salary →
-                </span>
+                <span className="text-primary text-sm">See 2026 salary →</span>
               </div>
             </div>
           </button>
@@ -399,9 +394,7 @@ function NumberBlock({
     <div
       className={
         "rounded-xl border p-5 " +
-        (highlight
-          ? "border-primary/40 bg-primary/5"
-          : "border-border bg-surface")
+        (highlight ? "border-primary/40 bg-primary/5" : "border-border bg-surface")
       }
     >
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
