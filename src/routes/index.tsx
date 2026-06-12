@@ -174,7 +174,7 @@ function Index() {
 function Stepper({ step }: { step: Step }) {
   const items = [
     { n: 1, label: "Function" },
-    { n: 2, label: "Seniority" },
+    { n: 2, label: "Role" },
     { n: 3, label: "Salary" },
   ];
   return (
