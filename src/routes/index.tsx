@@ -337,9 +337,6 @@ function ResultStep({
             {category.name} · 2026
           </span>
           <h2 className="mt-2 text-3xl sm:text-4xl font-display">{role.title}</h2>
-          <p className="text-muted-foreground text-sm mt-2 max-w-md">
-            {sen.label} · {sen.sub}
-          </p>
         </div>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
