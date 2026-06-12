@@ -308,7 +308,7 @@ function ResultStep({
   const totalMax = role.max + bonusMaxAmt;
   const span = role.max - role.min;
   const avgPct = span > 0 ? ((role.avg - role.min) / span) * 100 : 50;
-  const sen = seniorityLevels.find((s) => s.key === role.level)!;
+  
 
   return (
     <div className="rounded-2xl border border-border bg-card p-6 sm:p-10 relative overflow-hidden">
