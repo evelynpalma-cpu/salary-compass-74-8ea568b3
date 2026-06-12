@@ -362,7 +362,7 @@ function ResultStep({
         )}
 
         <div className="mt-8 flex flex-wrap gap-3">
-          
+           <a
             href="mailto:info@bbird.ch?subject=Salary%20benchmark%20-%20talk%20to%20Blackbird"
             className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
           >
