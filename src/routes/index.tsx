@@ -263,36 +263,28 @@ function SeniorityStep({
           >
             ← Change function
           </button>
-          <h2 className="text-2xl font-display mt-1">{category.name} · pick a seniority</h2>
+          <h2 className="text-2xl font-display mt-1">{category.name} · pick a role</h2>
           <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
         </div>
       </div>
 
       <div className="mt-6 grid gap-3">
-        {category.roles.map((r) => {
-          const sen = seniorityLevels.find((s) => s.key === r.level)!;
-          return (
-            <button
-              key={r.title}
-              onClick={() => onPick(r.title)}
-              className="group text-left rounded-xl border border-border bg-card p-5 hover:border-primary hover:bg-primary/5 transition"
-            >
-              <div className="flex items-start justify-between gap-4 flex-wrap">
-                <div>
-                  <div className="text-xs uppercase tracking-wider text-primary">
-                    {sen.label} · {sen.sub}
-                  </div>
-                  <div className="font-display text-xl mt-1">{r.title}</div>
-                </div>
-                <div className="text-right">
-                  <span className="text-primary text-sm">
-                    See 2026 salary →
-                  </span>
-                </div>
+        {category.roles.map((r) => (
+          <button
+            key={r.title}
+            onClick={() => onPick(r.title)}
+            className="group text-left rounded-xl border border-border bg-card p-5 hover:border-primary hover:bg-primary/5 transition"
+          >
+            <div className="flex items-start justify-between gap-4 flex-wrap">
+              <div className="font-display text-xl">{r.title}</div>
+              <div className="text-right">
+                <span className="text-primary text-sm">
+                  See 2026 salary →
+                </span>
               </div>
-            </button>
-          );
-        })}
+            </div>
+          </button>
+        ))}
       </div>
     </div>
   );
