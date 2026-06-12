@@ -8,7 +8,6 @@ import {
   type Role,
 } from "@/lib/salary-data";
 import {
-  TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
@@ -131,7 +130,7 @@ function Index() {
             <InfoTile
               title="Bonuses"
               tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
-              body="Variable compensation is common in Switzerland and generally increases with seniority. Professional roles often receive performance bonuses of 5–20% of base salary, while senior leadership and executive roles may participate in larger annual incentive plans. Bonus levels vary significantly by industry, company size, ownership structure and business performance."
+              body="Variable compensation is common in Switzerland and generally increases with seniority. Professional roles often receive performance bonuses of 5-20% of base salary, while senior leadership and executive roles may participate in larger annual incentive plans. Bonus levels vary significantly by industry, company size, ownership structure and business performance."
             />
             <InfoTile
               title="Long-term incentives (LTI)"
@@ -139,12 +138,12 @@ function Index() {
               body="Long-term incentives are typically reserved for senior leadership and executive positions. Listed companies often provide share-based plans, private equity-backed businesses may offer management participation programs, and start-ups frequently use ESOP or phantom share structures. LTIs are less common in traditional Swiss SMEs."
             />
             <InfoTile
-              title="Retirement & Insurance"
+              title="Retirement and Insurance"
               tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
               body="Swiss employers frequently differentiate themselves through enhanced pension fund contributions (BVG), executive pension plans, healthcare insurance coverage. For senior professionals, these benefits can represent a significant part of total compensation."
             />
             <InfoTile
-              title="Benefits & Flexibility"
+              title="Benefits and Flexibility"
               tooltip="Benefit structures vary significantly by employer, industry, ownership structure and seniority level."
               body="Beyond compensation, employers can differentiate themselves by offering flexible working arrangements, public transport subsidies (GA/Half-fare card), professional development support, additional leave and family-related benefits. Availability varies by employer, industry and seniority."
             />
@@ -158,7 +157,7 @@ function Index() {
 
       <footer className="border-t border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-6 text-xs text-muted-foreground flex flex-wrap gap-2 justify-between">
-          <span>© Blackbird Talent Solutions · SECO-licensed recruitment company</span>
+          <span>Blackbird Talent Solutions · SECO-licensed recruitment company</span>
           <span>Seestrasse 185a, 8800 Thalwil · www.bbird.ch</span>
         </div>
       </footer>
@@ -224,7 +223,7 @@ function FunctionStep({ onPick }: { onPick: (name: string) => void }) {
             <div className="flex items-center justify-between">
               <span className="font-display text-lg">{c.name}</span>
               <span className="text-primary text-sm opacity-0 group-hover:opacity-100 transition">
-                Select →
+                Select
               </span>
             </div>
             <p className="text-sm text-muted-foreground mt-1">{c.description}</p>
@@ -255,7 +254,7 @@ function SeniorityStep({
             onClick={onBack}
             className="text-xs text-muted-foreground hover:text-foreground transition"
           >
-            ← Change function
+            Change function
           </button>
           <h2 className="text-2xl font-display mt-1">{category.name} · pick a role</h2>
           <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
@@ -271,7 +270,7 @@ function SeniorityStep({
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="font-display text-xl">{r.title}</div>
               <div className="text-right">
-                <span className="text-primary text-sm">See 2026 salary →</span>
+                <span className="text-primary text-sm">See 2026 salary</span>
               </div>
             </div>
           </button>
@@ -308,13 +307,13 @@ function ResultStep({
             onClick={onChangeFunction}
             className="px-3 py-1 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-primary/50 transition"
           >
-            ← {category.name}
+            {category.name}
           </button>
           <button
             onClick={onChangeRole}
             className="px-3 py-1 rounded-full border border-border bg-secondary text-muted-foreground hover:text-foreground hover:border-primary/50 transition"
           >
-            ← Change role
+            Change role
           </button>
         </div>
 
@@ -351,7 +350,7 @@ function ResultStep({
         <div className="mt-8">
           <Stat
             label="Typical bonus"
-            value={`${bonus.min}–${bonus.max}%`}
+            value={`${bonus.min}-${bonus.max}%`}
           />
         </div>
 
