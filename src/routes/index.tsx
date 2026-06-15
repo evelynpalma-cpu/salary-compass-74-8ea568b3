@@ -8,11 +8,11 @@ import {
   type Role,
 } from "@/lib/salary-data";
 import {
-  TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
+import blackbirdLogo from "@/assets/blackbird-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
