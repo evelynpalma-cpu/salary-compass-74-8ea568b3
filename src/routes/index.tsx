@@ -63,12 +63,9 @@ function Index() {
     <div className="min-h-screen bg-grain">
       <header className="border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-md bg-primary grid place-items-center">
-              <span className="text-primary-foreground font-display text-sm font-semibold">B</span>
-            </div>
-            <span className="font-display text-lg">Blackbird</span>
-            <span className="text-muted-foreground text-xs ml-2 hidden sm:inline">
+          <div className="flex items-center gap-3">
+            <img src={blackbirdLogo.url} alt="Blackbird" className="h-10 w-10 object-contain" />
+            <span className="text-muted-foreground text-xs hidden sm:inline">
               Talent Solutions · Switzerland
             </span>
           </div>
