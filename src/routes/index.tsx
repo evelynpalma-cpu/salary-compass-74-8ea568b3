@@ -299,12 +299,10 @@ function ResultStep({
   onChangeFunction: () => void;
 }) {
   const bonus = bonusRanges[role.level];
-  const bonusMinAmt = Math.round((role.min * bonus.min) / 100);
-  const bonusMaxAmt = Math.round((role.max * bonus.max) / 100);
-  const totalMin = role.min + bonusMinAmt;
-  const totalMax = role.max + bonusMaxAmt;
   const span = role.max - role.min;
   const avgPct = span > 0 ? ((role.avg - role.min) / span) * 100 : 50;
+
+
   
 
   return (
