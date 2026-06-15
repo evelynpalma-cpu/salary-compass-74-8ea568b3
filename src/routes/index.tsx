@@ -378,7 +378,7 @@ function ResultStep({
             href="mailto:info@bbird.ch?subject=Salary%20benchmark%20-%20talk%20to%20Blackbird"
             className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
           >
-            Talk to a Blackbird advisor
+            Talk to Blackbird Advisor
           </a>
           <button
             onClick={onChangeFunction}
