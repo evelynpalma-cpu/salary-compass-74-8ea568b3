@@ -8,11 +8,11 @@ import {
   type Role,
 } from "@/lib/salary-data";
 import {
-  TooltipProvider,
   Tooltip,
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
+import blackbirdLogo from "@/assets/blackbird-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -63,12 +63,9 @@ function Index() {
     <div className="min-h-screen bg-grain">
       <header className="border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-md bg-primary grid place-items-center">
-              <span className="text-primary-foreground font-display text-sm font-semibold">B</span>
-            </div>
-            <span className="font-display text-lg">Blackbird</span>
-            <span className="text-muted-foreground text-xs ml-2 hidden sm:inline">
+          <div className="flex items-center gap-3">
+            <img src={blackbirdLogo.url} alt="Blackbird" className="h-10 w-10 object-contain" />
+            <span className="text-muted-foreground text-xs hidden sm:inline">
               Talent Solutions · Switzerland
             </span>
           </div>
@@ -302,12 +299,10 @@ function ResultStep({
   onChangeFunction: () => void;
 }) {
   const bonus = bonusRanges[role.level];
-  const bonusMinAmt = Math.round((role.min * bonus.min) / 100);
-  const bonusMaxAmt = Math.round((role.max * bonus.max) / 100);
-  const totalMin = role.min + bonusMinAmt;
-  const totalMax = role.max + bonusMaxAmt;
   const span = role.max - role.min;
   const avgPct = span > 0 ? ((role.avg - role.min) / span) * 100 : 50;
+
+
   
 
   return (
@@ -362,18 +357,14 @@ function ResultStep({
           </div>
         </div>
 
-        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+        <div className="mt-8">
           <Stat
             label="Typical bonus"
             value={`${bonus.min}–${bonus.max}%`}
-            sub={`${formatCHF(bonusMinAmt)} – ${formatCHF(bonusMaxAmt)} per year`}
-          />
-          <Stat
-            label="Estimated total cash"
-            value={`${formatCHF(totalMin)} – ${formatCHF(totalMax)}`}
-            sub="Base + bonus, per year"
+            sub="Percentage of base salary, per year"
           />
         </div>
+
 
         {(role.level === "head" || role.level === "executive") && (
           <div className="mt-6 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm text-foreground/90">
