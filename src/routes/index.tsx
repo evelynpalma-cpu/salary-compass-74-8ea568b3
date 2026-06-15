@@ -357,18 +357,14 @@ function ResultStep({
           </div>
         </div>
 
-        <div className="mt-8 grid sm:grid-cols-2 gap-4">
+        <div className="mt-8">
           <Stat
             label="Typical bonus"
             value={`${bonus.min}–${bonus.max}%`}
-            sub={`${formatCHF(bonusMinAmt)} – ${formatCHF(bonusMaxAmt)} per year`}
-          />
-          <Stat
-            label="Estimated total cash"
-            value={`${formatCHF(totalMin)} – ${formatCHF(totalMax)}`}
-            sub="Base + bonus, per year"
+            sub="Percentage of base salary, per year"
           />
         </div>
+
 
         {(role.level === "head" || role.level === "executive") && (
           <div className="mt-6 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm text-foreground/90">
