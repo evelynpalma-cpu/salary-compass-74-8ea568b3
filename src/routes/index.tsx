@@ -12,7 +12,7 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
-import blackbirdLogo from "@/assets/blackbird-logo.png.asset.json";
+import blackbirdLogo from "@/assets/blackbird-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,7 +64,7 @@ function Index() {
       <header className="border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={blackbirdLogo.url} alt="Blackbird" className="h-10 w-10 object-contain" />
+            <img src={blackbirdLogo} alt="Blackbird" className="h-10 w-10 object-contain" />
             <span className="text-muted-foreground text-xs hidden sm:inline">
               Talent Solutions · Switzerland
             </span>
@@ -152,6 +152,11 @@ function Index() {
             />
           </div>
         </section>
+
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a href="mailto:info@bbird.ch?subject=Salary%20benchmark%20-%20talk%20to%20Blackbird" className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition">Talk to Blackbird Advisor</a>
+          <button onClick={() => { setCategoryName(null); setRoleTitle(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary text-secondary-foreground px-5 py-2.5 text-sm hover:border-primary/50 transition">Benchmark another role</button>
+        </div>
 
         <p className="mt-12 text-xs text-muted-foreground max-w-3xl">
           Compensation structures and benefits vary by company, industry, ownership structure and role level. Information shown is indicative of Swiss market practice and should not be interpreted as a guaranteed compensation package.
@@ -373,20 +378,6 @@ function ResultStep({
           </div>
         )}
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="mailto:info@bbird.ch?subject=Salary%20benchmark%20-%20talk%20to%20Blackbird"
-            className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
-          >
-            Talk to Blackbird Advisor
-          </a>
-          <button
-            onClick={onChangeFunction}
-            className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary text-secondary-foreground px-5 py-2.5 text-sm hover:border-primary/50 transition"
-          >
-            Benchmark another role
-          </button>
-        </div>
       </div>
     </div>
   );
