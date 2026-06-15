@@ -346,7 +346,9 @@ function ResultStep({
           <NumberBlock label="Maximum" value={formatCHF(role.max)} />
         </div>
 
-        <p className="mt-3 text-xs text-foreground/60">Figures are indicative only and not a guarantee of compensation.</p>
+        {!(role.title === "BU CFO (BU/Subsidiary)" || role.title === "Group CFO") && (
+          <p className="mt-3 text-xs text-foreground/60">Figures are indicative only and not a guarantee of compensation.</p>
+        )}
 
         {(role.title === "BU CFO (BU/Subsidiary)" || role.title === "Group CFO") && (
           <div className="mt-4 rounded-lg border border-border bg-secondary px-4 py-3 text-xs text-foreground/60">
