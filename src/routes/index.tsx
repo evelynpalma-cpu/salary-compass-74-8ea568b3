@@ -92,6 +92,9 @@ function Index() {
             base salary, bonus, and total cash. Figures are based on market research, recent
             placements, and ongoing market discussions.
           </p>
+          <p className="mt-3 text-xs text-muted-foreground max-w-2xl">
+            Figures are indicative of Swiss market practice and based on market research, recent placements, and ongoing discussions. Individual packages may vary by company, industry, and seniority.
+          </p>
         </section>
 
         <Stepper step={step} />
@@ -158,9 +161,7 @@ function Index() {
           <button onClick={() => { setCategoryName(null); setRoleTitle(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="inline-flex items-center justify-center rounded-lg border border-border bg-secondary text-secondary-foreground px-5 py-2.5 text-sm hover:border-primary/50 transition">Benchmark another role</button>
         </div>
 
-        <p className="mt-12 text-xs text-muted-foreground max-w-3xl">
-          Compensation structures and benefits vary by company, industry, ownership structure and role level. Information shown is indicative of Swiss market practice and should not be interpreted as a guaranteed compensation package.
-        </p>
+
       </main>
 
       <footer className="border-t border-border/60">
@@ -345,6 +346,12 @@ function ResultStep({
           <NumberBlock label="Maximum" value={formatCHF(role.max)} />
         </div>
 
+        {(role.title === "BU CFO (BU/Subsidiary)" || role.title === "Group CFO") && (
+          <div className="mt-4 rounded-lg border border-border bg-secondary px-4 py-3 text-xs text-muted-foreground">
+            These figures are indicative only. CFO compensation varies significantly by company size, revenue, ownership structure, and sector. Actual packages may differ substantially.
+          </div>
+        )}
+
         <div className="mt-8">
           <div className="text-xs uppercase tracking-wider text-muted-foreground">
             Base salary range
@@ -376,6 +383,12 @@ function ResultStep({
             <span className="text-primary font-medium">LTI eligible.</span> Stock, RSUs or phantom
             shares are typically offered at this level, especially in listed or PE-backed firms.
           </div>
+        )}
+
+        {(role.level === "head" || role.level === "executive") && (
+          <p className="mt-3 text-xs text-muted-foreground">
+            Executive and C-level compensation is highly variable and influenced by company size, revenue, ownership structure, sector, and individual negotiation. Figures here should be used as a directional reference only.
+          </p>
         )}
 
       </div>

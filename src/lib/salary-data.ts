@@ -39,8 +39,8 @@ export const categories: Category[] = [
     roles: [
       { title: "FP&A Analyst", min: 95000, avg: 110000, max: 125000, level: "analyst" },
       { title: "Senior FP&A Analyst", min: 115000, avg: 125000, max: 135000, level: "senior" },
-      { title: "FP&A Manager", min: 150000, avg: 165000, max: 180000, level: "manager" },
-      { title: "Head of FP&A", min: 200000, avg: 230000, max: 260000, level: "head" },
+      { title: "FP&A Manager", min: 145000, avg: 157500, max: 170000, level: "manager" },
+      { title: "Head of FP&A", min: 180000, avg: 220000, max: 260000, level: "head" },
     ],
   },
   {
@@ -57,7 +57,7 @@ export const categories: Category[] = [
     name: "Tax",
     description: "Corporate & international tax planning, transfer pricing, VAT.",
     roles: [
-      { title: "Tax Analyst", min: 95000, avg: 105000, max: 115000, level: "analyst" },
+      { title: "Tax Analyst", min: 80000, avg: 97500, max: 115000, level: "analyst" },
       { title: "Senior Tax Analyst", min: 110000, avg: 120000, max: 130000, level: "senior" },
       { title: "Tax Manager", min: 140000, avg: 160000, max: 180000, level: "manager" },
       { title: "Head of Tax", min: 200000, avg: 245000, max: 280000, level: "head" },
@@ -80,7 +80,7 @@ export const categories: Category[] = [
       { title: "Finance Manager", min: 140000, avg: 150000, max: 160000, level: "manager" },
       { title: "Head of Finance", min: 180000, avg: 220000, max: 260000, level: "head" },
       { title: "BU CFO (BU/Subsidiary)", min: 220000, avg: 260000, max: 300000, level: "executive" },
-      { title: "Group CFO", min: 280000, avg: 340000, max: 400000, level: "executive" },
+      { title: "Group CFO", min: 280000, avg: 365000, max: 450000, level: "executive" },
     ],
   },
 ];
