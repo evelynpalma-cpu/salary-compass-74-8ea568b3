@@ -17,17 +17,48 @@ import blackbirdLogo from "@/assets/blackbird-logo.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Finance Salary Benchmark Switzerland 2026 · Blackbird" },
+      { title: "Finance Salary Benchmark Switzerland 2026 · Blackbird Talent Solutions" },
       {
         name: "description",
-        content:
-          "Swiss finance salary benchmarks for 2026. Pick a function and seniority to see the full base salary range, bonus and total cash for finance roles across Switzerland.",
+        content: "Free Swiss finance salary benchmark 2026 by Blackbird Talent Solutions. Compare base salaries, bonuses and total cash for CFO, FP&A, Controlling, Treasury, Tax, Audit and Accounting roles in Switzerland. Based on real placements and market data.",
       },
-      { property: "og:title", content: "Finance Salary Benchmark Switzerland 2026" },
+      { name: "keywords", content: "Swiss finance salary 2026, CFO salary Switzerland, FP&A salary Zurich, finance salary benchmark Switzerland, Controlling salary Switzerland, Treasury salary Switzerland, Tax Manager salary Switzerland, finance recruitment Switzerland, Blackbird Talent Solutions" },
+      { name: "author", content: "Blackbird Talent Solutions" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Finance Salary Benchmark Switzerland 2026 · Blackbird" },
+      { property: "og:description", content: "Compare Swiss finance salaries for 2026. CFO, FP&A, Controlling, Treasury, Tax and more. Free tool by Blackbird Talent Solutions, SECO-licensed recruiters." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://salaries.bbird.ch" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Finance Salary Benchmark Switzerland 2026" },
+      { name: "twitter:description", content: "Compare Swiss finance salaries for 2026. Free tool by Blackbird Talent Solutions." },
+    ],
+    scripts: [
       {
-        property: "og:description",
-        content: "Pick a function, then a seniority, and get the 2026 Swiss finance salary range instantly.",
-      },
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dataset",
+          "name": "Swiss Finance Salary Benchmark 2026",
+          "description": "Salary benchmarks for finance roles in Switzerland including CFO, FP&A, Controlling, Treasury, Tax, Audit and Accounting. Data based on market research, real placements and ongoing market discussions.",
+          "url": "https://salaries.bbird.ch",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Blackbird Talent Solutions",
+            "url": "https://www.bbird.ch",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Seestrasse 185a",
+              "addressLocality": "Thalwil",
+              "postalCode": "8800",
+              "addressCountry": "CH"
+            }
+          },
+          "temporalCoverage": "2026",
+          "spatialCoverage": "Switzerland",
+          "keywords": ["finance salary", "Switzerland", "CFO", "FP&A", "Controlling", "Treasury", "Tax", "Audit", "Accounting", "salary benchmark", "2026"]
+        })
+      }
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
