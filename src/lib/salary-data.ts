@@ -79,6 +79,7 @@ export const categories: Category[] = [
     roles: [
       { title: "Finance Manager", min: 140000, avg: 150000, max: 160000, level: "manager" },
       { title: "Head of Finance", min: 180000, avg: 220000, max: 260000, level: "head" },
+      { title: "Finance Director", min: 220000, avg: 240000, max: 280000, level: "head" },
       { title: "BU CFO (BU/Subsidiary)", min: 220000, avg: 260000, max: 300000, level: "executive" },
       { title: "Group CFO", min: 280000, avg: 365000, max: 450000, level: "executive" },
     ],
