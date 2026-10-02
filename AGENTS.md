@@ -1,0 +1,1 @@
+- Keep salary benchmark presentation and structured data derived from `src/lib/salary-data.ts` so visible and machine-readable figures remain consistent.

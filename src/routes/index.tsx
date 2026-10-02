@@ -56,7 +56,23 @@ export const Route = createFileRoute("/")({
           },
           "temporalCoverage": "2026",
           "spatialCoverage": "Switzerland",
-          "keywords": ["finance salary", "Switzerland", "CFO", "FP&A", "Controlling", "Treasury", "Tax", "Audit", "Accounting", "salary benchmark", "2026"]
+           "keywords": ["finance salary", "Switzerland", "CFO", "FP&A", "Controlling", "Treasury", "Tax", "Audit", "Accounting", "salary benchmark", "2026"],
+           "hasPart": categories.map((category) => ({
+             "@type": "Dataset",
+             "name": `${category.name} salaries in Switzerland 2026`,
+             "hasPart": category.roles.map((role) => ({
+               "@type": "Dataset",
+               "name": `${role.title} annual base salary in Switzerland 2026`,
+               "description": `Indicative annual base salary in CHF for ${role.title} in Switzerland. Typical bonus is a percentage of base salary and is not included in the base figures.`,
+               "variableMeasured": [
+                 { "@type": "PropertyValue", "name": "Minimum annual base salary", "value": role.min, "unitText": "CHF per year" },
+                 { "@type": "PropertyValue", "name": "Average annual base salary", "value": role.avg, "unitText": "CHF per year" },
+                 { "@type": "PropertyValue", "name": "Maximum annual base salary", "value": role.max, "unitText": "CHF per year" },
+                 { "@type": "PropertyValue", "name": "Typical bonus minimum", "value": bonusRanges[role.level].min, "unitText": "percent of base salary" },
+                 { "@type": "PropertyValue", "name": "Typical bonus maximum", "value": bonusRanges[role.level].max, "unitText": "percent of base salary" }
+               ]
+             }))
+           }))
         })
       }
     ],
@@ -161,6 +177,8 @@ function Index() {
           )}
         </section>
 
+         <SalarySummaryTable />
+
         <section className="mt-20">
           <h2 className="text-2xl">What's typically included beyond base</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -202,6 +220,52 @@ function Index() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function SalarySummaryTable() {
+  return (
+    <section className="mt-20" aria-labelledby="salary-summary-heading">
+      <h2 id="salary-summary-heading" className="text-2xl">Swiss finance salaries by role · 2026</h2>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Indicative annual base salaries in CHF. Typical bonuses are shown separately as a percentage of base salary.
+      </p>
+      <div className="mt-6 overflow-x-auto border-y border-border">
+        <table className="w-full min-w-[650px] border-collapse text-sm">
+          <caption className="sr-only">2026 Swiss finance salary benchmark by function and role</caption>
+          <thead className="bg-secondary text-muted-foreground">
+            <tr>
+              <th scope="col" className="px-4 py-3 text-left font-medium">Role</th>
+              <th scope="col" className="px-4 py-3 text-right font-medium">Minimum</th>
+              <th scope="col" className="px-4 py-3 text-right font-medium">Average</th>
+              <th scope="col" className="px-4 py-3 text-right font-medium">Maximum</th>
+              <th scope="col" className="px-4 py-3 text-right font-medium">Typical bonus</th>
+            </tr>
+          </thead>
+          {categories.map((category) => (
+            <tbody key={category.name}>
+              <tr className="border-t border-border bg-primary/5">
+                <th scope="rowgroup" colSpan={5} className="px-4 py-3 text-left font-display text-base font-medium text-foreground">
+                  {category.name}
+                </th>
+              </tr>
+              {category.roles.map((role) => (
+                <tr key={role.title} className="border-t border-border/60">
+                  <th scope="row" className="px-4 py-3 text-left font-medium text-foreground">{role.title}</th>
+                  <td className="whitespace-nowrap px-4 py-3 text-right tabular-nums">{formatCHF(role.min)}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-right tabular-nums font-medium text-primary">{formatCHF(role.avg)}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-right tabular-nums">{formatCHF(role.max)}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-right tabular-nums">{bonusRanges[role.level].min}–{bonusRanges[role.level].max}%</td>
+                </tr>
+              ))}
+            </tbody>
+          ))}
+        </table>
+      </div>
+      <p className="mt-3 text-xs text-muted-foreground">
+        Figures are indicative only. Actual compensation varies by company, industry and seniority; bonuses are not guaranteed.
+      </p>
+    </section>
   );
 }
 
