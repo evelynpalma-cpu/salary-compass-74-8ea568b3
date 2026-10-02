@@ -1,0 +1,3 @@
+- [x] Show every role's salary range and bonus in an always-visible, crawlable table below the calculator.
+- [x] Add the same role-level figures to the page's structured data without altering the three-step calculator.
+- [x] Verify server-rendered table, structured data, and wizard interaction.
