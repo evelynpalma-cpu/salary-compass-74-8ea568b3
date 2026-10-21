@@ -4,3 +4,5 @@
 - [x] Show all current Dataset JSON-LD before editing.
 - [x] Add factual descriptions, creator and language to every Dataset without invented dates or research details.
 - [x] Validate JSON-LD and the unchanged wizard; show a final complete example.
+- [ ] Apply the seven exact uploaded function descriptions without changing other fields.
+- [ ] Verify JSON-LD, request publishing, and show the final Accounting group.
