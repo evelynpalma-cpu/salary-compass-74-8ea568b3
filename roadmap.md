@@ -1,3 +1,6 @@
 - [x] Show every role's salary range and bonus in an always-visible, crawlable table below the calculator.
 - [x] Add the same role-level figures to the page's structured data without altering the three-step calculator.
 - [x] Verify server-rendered table, structured data, and wizard interaction.
+- [ ] Show all current Dataset JSON-LD before editing.
+- [ ] Add factual descriptions, creator and language to every Dataset without invented dates or research details.
+- [ ] Validate JSON-LD and the unchanged wizard; show a final complete example.
