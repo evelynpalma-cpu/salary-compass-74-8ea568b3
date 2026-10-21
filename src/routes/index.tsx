@@ -13,6 +13,7 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip";
 import blackbirdLogo from "@/assets/blackbird-logo.png";
+import { createSalaryDataset } from "@/lib/salary-schema";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,44 +37,7 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Dataset",
-          "name": "Swiss Finance Salary Benchmark 2026",
-          "description": "Salary benchmarks for finance roles in Switzerland including CFO, FP&A, Controlling, Treasury, Tax, Audit and Accounting. Data based on market research, real placements and ongoing market discussions.",
-          "url": "https://salaries.bbird.ch",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Blackbird Talent Solutions",
-            "url": "https://www.bbird.ch",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Seestrasse 185a",
-              "addressLocality": "Thalwil",
-              "postalCode": "8800",
-              "addressCountry": "CH"
-            }
-          },
-          "temporalCoverage": "2026",
-          "spatialCoverage": "Switzerland",
-           "keywords": ["finance salary", "Switzerland", "CFO", "FP&A", "Controlling", "Treasury", "Tax", "Audit", "Accounting", "salary benchmark", "2026"],
-           "hasPart": categories.map((category) => ({
-             "@type": "Dataset",
-             "name": `${category.name} salaries in Switzerland 2026`,
-             "hasPart": category.roles.map((role) => ({
-               "@type": "Dataset",
-               "name": `${role.title} annual base salary in Switzerland 2026`,
-               "description": `Indicative annual base salary in CHF for ${role.title} in Switzerland. Typical bonus is a percentage of base salary and is not included in the base figures.`,
-               "variableMeasured": [
-                 { "@type": "PropertyValue", "name": "Minimum annual base salary", "value": role.min, "unitText": "CHF per year" },
-                 { "@type": "PropertyValue", "name": "Average annual base salary", "value": role.avg, "unitText": "CHF per year" },
-                 { "@type": "PropertyValue", "name": "Maximum annual base salary", "value": role.max, "unitText": "CHF per year" },
-                 { "@type": "PropertyValue", "name": "Typical bonus minimum", "value": bonusRanges[role.level].min, "unitText": "percent of base salary" },
-                 { "@type": "PropertyValue", "name": "Typical bonus maximum", "value": bonusRanges[role.level].max, "unitText": "percent of base salary" }
-               ]
-             }))
-           }))
-        })
+        children: JSON.stringify(createSalaryDataset())
       }
     ],
     links: [

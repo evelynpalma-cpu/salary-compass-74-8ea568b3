@@ -1,1 +1,2 @@
 - Keep salary benchmark presentation and structured data derived from `src/lib/salary-data.ts` so visible and machine-readable figures remain consistent.
+- Generate Dataset JSON-LD through `src/lib/salary-schema.ts` so shared identity fields apply consistently to the overview, functions and roles, with focused regression tests alongside it.
