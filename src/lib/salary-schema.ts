@@ -35,7 +35,7 @@ export function createSalaryDataset() {
     hasPart: categories.map((category) => ({
       "@type": "Dataset",
       name: `${category.name} salaries in Switzerland 2026`,
-      description: `Indicative annual base salary ranges and typical bonus percentages for ${category.name} roles in Switzerland, by role and seniority, compiled by Blackbird Talent Solutions.`,
+      description: `Indicative annual base salaries in CHF and typical bonus ranges for ${category.name} roles in Switzerland in 2026: ${category.roles.slice(0, -1).map((role) => role.title).join(", ")} and ${category.roles.at(-1)?.title}.`,
       ...datasetIdentity,
       hasPart: category.roles.map((role) => ({
         "@type": "Dataset",
