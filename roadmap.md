@@ -6,4 +6,4 @@
 - [x] Validate JSON-LD and the unchanged wizard; show a final complete example.
 - [x] Apply the seven exact uploaded function descriptions without changing other fields.
 - [x] Verify JSON-LD and prepare the final Accounting group for review.
-- [ ] Request publishing after verification.
+- [x] Request publishing after verification.
