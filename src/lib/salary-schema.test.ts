@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { expect, test } from "bun:test";
 import { bonusRanges, categories } from "./salary-data";
 import { createSalaryDataset } from "./salary-schema";
