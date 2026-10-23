@@ -21,18 +21,18 @@ export const Route = createFileRoute("/")({
       { title: "Finance Salary Benchmark Switzerland 2026 · Blackbird Talent Solutions" },
       {
         name: "description",
-        content: "Free Swiss finance salary benchmark 2026 by Blackbird Talent Solutions. Compare base salaries, bonuses and total cash for CFO, FP&A, Controlling, Treasury, Tax, Audit and Accounting roles in Switzerland. Based on real placements and market data.",
+        content: "Salary ranges for finance roles in Switzerland, based on Blackbird's placements and market research.",
       },
       { name: "keywords", content: "Swiss finance salary 2026, CFO salary Switzerland, FP&A salary Zurich, finance salary benchmark Switzerland, Controlling salary Switzerland, Treasury salary Switzerland, Tax Manager salary Switzerland, finance recruitment Switzerland, Blackbird Talent Solutions" },
       { name: "author", content: "Blackbird Talent Solutions" },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Finance Salary Benchmark Switzerland 2026 · Blackbird" },
-      { property: "og:description", content: "Compare Swiss finance salaries for 2026. CFO, FP&A, Controlling, Treasury, Tax and more. Free tool by Blackbird Talent Solutions, SECO-licensed recruiters." },
+      { property: "og:description", content: "Salary ranges for finance roles in Switzerland, based on Blackbird's placements and market research." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://salaries.bbird.ch" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Finance Salary Benchmark Switzerland 2026" },
-      { name: "twitter:description", content: "Compare Swiss finance salaries for 2026. Free tool by Blackbird Talent Solutions." },
+      { name: "twitter:description", content: "Salary ranges for finance roles in Switzerland, based on Blackbird's placements and market research." },
     ],
     scripts: [
       {
@@ -100,11 +100,10 @@ function Index() {
           </h1>
           <p className="mt-5 text-base sm:text-lg text-muted-foreground max-w-2xl">
             Pick your function, then your role, and we'll reveal the 2026 Swiss market range:
-            base salary, bonus, and total cash. Figures are based on market research, recent
-            placements, and ongoing market discussions.
+            base salary, bonus, and total cash. Figures are Blackbird's own, based on our placements, our market research and ongoing salary discussions.
           </p>
           <p className="mt-3 text-xs text-muted-foreground max-w-2xl">
-            Figures are indicative of Swiss market practice and based on market research, recent placements, and ongoing discussions. Individual packages may vary by company, industry, and seniority.
+            Figures are Blackbird's own, based on our placements, our market research and ongoing salary discussions. Individual packages may vary by company, industry, and seniority.
           </p>
         </section>
 
@@ -230,7 +229,7 @@ function SalarySummaryTable() {
         </table>
       </div>
       <p className="mt-3 text-xs text-muted-foreground">
-        Figures are indicative only. Actual compensation varies by company, industry and seniority; bonuses are not guaranteed.
+        Figures are Blackbird's own, based on our placements, our market research and ongoing salary discussions. Actual compensation varies by company, industry and seniority; bonuses are not guaranteed.
       </p>
     </section>
   );
