@@ -181,6 +181,9 @@ function Index() {
         <div className="mx-auto max-w-5xl px-6 py-6 text-xs text-muted-foreground flex flex-wrap gap-2 justify-between">
           <span>© Blackbird Talent Solutions · SECO-licensed recruitment company</span>
           <span>Seestrasse 185a, 8800 Thalwil · www.bbird.ch</span>
+          <p className="w-full">
+            Data licensed under <a href="https://creativecommons.org/licenses/by/4.0/" className="underline underline-offset-2 hover:text-foreground">CC BY 4.0</a>. Please credit Blackbird Talent Solutions and link to <a href="https://salaries.bbird.ch" className="underline underline-offset-2 hover:text-foreground">salaries.bbird.ch</a>.
+          </p>
         </div>
       </footer>
     </div>
