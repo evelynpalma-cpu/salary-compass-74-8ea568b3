@@ -7,3 +7,5 @@
 - [x] Apply the seven exact uploaded function descriptions without changing other fields.
 - [x] Verify JSON-LD and prepare the final Accounting group for review.
 - [x] Request publishing after verification.
+- [x] Add the exact CC BY 4.0 license to every Dataset and the requested visible footer credit.
+- [ ] Verify raw HTML, unchanged structured data, and list all 37 licensed Dataset names by page.
