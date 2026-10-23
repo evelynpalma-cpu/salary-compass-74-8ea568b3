@@ -9,3 +9,5 @@
 - [x] Request publishing after verification.
 - [x] Add the exact CC BY 4.0 license to every Dataset and the requested visible footer credit.
 - [x] Verify raw HTML, unchanged structured data, and list all 37 licensed Dataset names by page.
+- [ ] Update the methodology in the intro and table footer and all three meta descriptions, preserving the license credit.
+- [ ] Check all 37 Dataset licenses, raw page source and unchanged unrelated content; list checked names.
