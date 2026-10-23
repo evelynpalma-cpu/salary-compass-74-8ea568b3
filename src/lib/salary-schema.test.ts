@@ -30,9 +30,27 @@ test("every Dataset uses the page's English language", () => {
   for (const dataset of datasets) expect(dataset.inLanguage).toBe("en");
 });
 
-test("no Dataset invents an update date, sample size or licence", () => {
+test("all 37 Datasets have the exact CC BY 4.0 license and other node types do not", () => {
+  expect(datasets).toHaveLength(37);
+  const visit = (node: unknown) => {
+    if (Array.isArray(node)) {
+      node.forEach(visit);
+    } else if (node !== null && typeof node === "object") {
+      const object = node as Record<string, unknown>;
+      if (object["@type"] === "Dataset") {
+        expect(object.license).toBe("https://creativecommons.org/licenses/by/4.0/");
+      } else {
+        expect(object).not.toHaveProperty("license");
+      }
+      Object.values(object).forEach(visit);
+    }
+  };
+  visit(JSON.parse(JSON.stringify(schema)));
+});
+
+test("no Dataset invents an update date, sample size or methodology", () => {
   for (const dataset of datasets) {
-    for (const field of ["dateModified", "dateCreated", "datePublished", "license", "sampleSize", "measurementTechnique"]) {
+    for (const field of ["dateModified", "dateCreated", "datePublished", "sampleSize", "measurementTechnique"]) {
       expect(dataset).not.toHaveProperty(field);
     }
   }
