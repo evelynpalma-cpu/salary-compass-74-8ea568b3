@@ -74,12 +74,16 @@ function Index() {
     <div className="min-h-screen bg-grain">
       <header className="border-b border-border/60">
         <div className="mx-auto max-w-5xl px-6 py-5 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <a
+            href="https://bbird.ch/finance-accounting-recruitment/"
+            aria-label="Blackbird Talent Solutions"
+            className="flex items-center gap-3"
+          >
             <img src={blackbirdLogo} alt="Blackbird" className="h-10 w-10 object-contain" />
             <span className="text-muted-foreground text-xs hidden sm:inline">
               Talent Solutions · Switzerland
             </span>
-          </div>
+          </a>
           <a
             href="mailto:info@bbird.ch"
             className="text-sm text-muted-foreground hover:text-foreground transition"
