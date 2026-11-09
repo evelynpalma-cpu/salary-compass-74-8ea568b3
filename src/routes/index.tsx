@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://salaries.bbird.ch" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Finance Salary Benchmark Switzerland 2026" },
-      { name: "twitter:description", content: "Salary ranges for finance roles in Switzerland, based on Blackbird's placements and market research." },
+      { name: "twitter:description", content: "Salary ranges for finance roles in Switzerland, from Accountant to CFO." },
     ],
     scripts: [
       {
