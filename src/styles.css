@@ -37,8 +37,8 @@
 :root {
   --radius: 0.5rem;
 
-  /* White background with charcoal text and burnt-orange accent — matches bbird.ch */
-  --background: oklch(1 0 0);
+  /* Warm off-white background (#f9f9f7) with charcoal text and burnt-orange accent, matching bbird.ch */
+  --background: #f9f9f7;
   --foreground: oklch(0.22 0.012 50);
 
   --surface: oklch(0.98 0.010 80);
@@ -93,9 +93,6 @@
 @layer utilities {
   .bg-grain {
     background-color: var(--color-background);
-    background-image:
-      radial-gradient(circle at 15% 10%, oklch(0.66 0.16 42 / 0.06), transparent 50%),
-      radial-gradient(circle at 90% 85%, oklch(0.66 0.16 42 / 0.05), transparent 55%);
   }
   .text-gradient-gold {
     color: oklch(0.62 0.18 42);
