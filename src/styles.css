@@ -37,8 +37,8 @@
 :root {
   --radius: 0.5rem;
 
-  /* Warm cream background with charcoal text and burnt-orange accent — Blackbird boutique tone */
-  --background: oklch(0.965 0.012 80);
+  /* White background with charcoal text and burnt-orange accent — matches bbird.ch */
+  --background: oklch(1 0 0);
   --foreground: oklch(0.22 0.012 50);
 
   --surface: oklch(0.98 0.010 80);
